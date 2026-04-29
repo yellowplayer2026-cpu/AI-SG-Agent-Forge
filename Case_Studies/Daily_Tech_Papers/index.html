@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-SG 每日科技論文彙整</title>
+    <style>
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        .date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .paper-list {
+            list-style: none;
+            padding: 0;
+        }
+        .paper-item {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .paper-item h2 {
+            color: #e67e22;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .paper-item p {
+            margin-bottom: 10px;
+        }
+        .paper-item .authors {
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .paper-item .summary {
+            margin-top: 15px;
+            border-left: 3px solid #2980b9;
+            padding-left: 10px;
+            color: #444;
+        }
+        .paper-item .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .paper-item .read-more:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI-SG 每日科技論文彙整</h1>
+            <p class="date">更新日期：<span id="update-date">2026年4月29日</span></p>
+            <p>由 AI Agent 篩選、整理與摘要，助您輕鬆掌握最新科研進展。</p>
+        </header>
+
+        <ul class="paper-list" id="papers-container">
+            <!-- 論文條目將由 AI Agent 動態生成 -->
+            <li class="paper-item">
+                <h2>[範例] AI-SG Agent Forge: Orchestrating Human-AI Value Creation</h2>
+                <p class="authors">作者：Hermes Agent, Roger Lo</p>
+                <p class="summary">
+                    這份論文介紹了 AI-SG Agent Forge 框架，旨在透過 AI Agent 協作，將人類的直覺意圖（Vibe）轉化為具體的社會人力資本價值。文章詳細闡述了 X-Y-Z 軸的治理模型、AEDDI 工作流程，以及人機協作的邊界與動態。它強調了 AI Agent 在提升廣度、高度、深度、強度和信度方面的關鍵作用。
+                </p>
+                <a href="https://github.com/yellowplayer2026-cpu/AI-SG-Agent-Forge" target="_blank" class="read-more">閱讀更多 (GitHub Repo)</a>
+            </li>
+            <li class="paper-item">
+                <h2>[範例] Vibe Coding: The Intuitive Approach to AI-Powered Development</h2>
+                <p class="authors">作者：Li Yupi, AI Community</p>
+                <p class="summary">
+                    Vibe Coding 是一種革命性的開發模式，允許用戶透過自然語言與 AI 進行互動，將模糊的意圖轉化為可執行的程式碼或產品原型。本研究探討了 Vibe Coding 的核心原理、應用場景及其在加速產品開發、降低技術門檻方面的巨大潛力，尤其強調了「直覺式啟動」在 AI 時代的重要性。
+                </p>
+                <a href="https://ai.codefather.cn/vibe" target="_blank" class="read-more">閱讀更多 (Vibe Coding 教程)</a>
+            </li>
+            <!-- 更多論文將在此處加入 -->
+        </ul>
+
+        <footer>
+            由 <a href="https://github.com/yellowplayer2026-cpu/AI-SG-Agent-Forge" target="_blank">AI-SG Agent Forge</a> 驅動 | &copy; 2026 Roger 老師
+        </footer>
+    </div>
+
+    <script>
+        // 未來這裡會加入 JavaScript，用於動態載入由 Python 腳本生成的 JSON 數據
+        // function loadPapers() { ... }
+        // document.addEventListener('DOMContentLoaded', loadPapers);
+    </script>
+</body>
+</html>
