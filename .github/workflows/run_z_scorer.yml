@@ -1,0 +1,30 @@
+name: Run Z-Axis Scorer
+
+on:
+  workflow_dispatch: # 允許手動從 GitHub Actions 頁面觸發此工作流程
+  push:
+    branches:
+      - main # 當有代碼推送到 main 分支時自動觸發
+
+jobs:
+  run-scorer:
+    runs-on: ubuntu-latest # 在最新的 Ubuntu 虛擬機上執行
+
+    steps:
+    - name: Checkout code # 第一步：將您的 GitHub 倉庫代碼拉取到虛擬機
+      uses: actions/checkout@v4
+
+    - name: Set up Python # 第二步：設定 Python 環境
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9' # 您可以指定 Python 版本，例如 '3.8', '3.9', '3.10', '3.11'
+
+    - name: Install dependencies # 第三步：安裝 z_axis_scorer.py 可能需要的依賴 (如果有的話)
+      run: |
+        python -m pip install --upgrade pip
+        # 如果 z_axis_scorer.py 需要其他 Python 庫，在這裡安裝，例如：
+        # pip install pandas numpy
+
+    - name: Run Z-Axis Scorer Script # 第四步：執行您的 Python 腳本
+      run: |
+        python Agent_Lab/z_axis_scorer.py
