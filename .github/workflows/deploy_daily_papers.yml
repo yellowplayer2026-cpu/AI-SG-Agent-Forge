@@ -1,0 +1,37 @@
+name: Deploy Daily Tech Papers
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 時間午夜 00:00 執行
+  workflow_dispatch: # 允許手動觸發
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9' # 使用 Python 3.9
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # 這裡可以安裝 aggregator.py 可能需要的庫，例如：
+        # pip install requests beautifulsoup4
+        # 因為我們的 aggregator.py 骨架暫時沒有實際抓取和解析，所以可以先不裝
+
+    - name: Run Aggregator and Generate HTML
+      run: |
+        python Case_Studies/Daily_Tech_Papers/aggregator.py
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./Case_Studies/Daily_Tech_Papers # 指定要發佈的目錄
+        keep_files: false # 不保留舊檔案
